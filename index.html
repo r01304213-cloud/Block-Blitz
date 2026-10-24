@@ -354,7 +354,9 @@ async function saveName(){
   }
   show('<h2>Mendaftarkan pemain…</h2><p class="mutednote">Menghubungkan username dan User ID ke database global.</p>');
   try{
-   const result=await sbRpc('register_player',{p_username:name,p_device_id:deviceId});
+   
+const result=await sbRpc('register_player',{p_username:name});
+
    playerName=String(result.username||name);playerId=String(result.user_id||'');
    if(!/^\d{8}$/.test(playerId))throw new Error('Server tidak mengembalikan User ID 8 digit.');
    sv('bp_player_name',playerName);sv('bp_player_id',playerId);sv('bp_global_registered',true);
