@@ -390,7 +390,7 @@ function setProfileTitle(v){const allowed=['NEW PLAYER','ROOKIE','RISING STAR','
 function viewProfile(name){if((name||'').toLowerCase()===(playerName||'').toLowerCase()){openProfile();return}const entry=lb.find(x=>(x.name||'').toLowerCase()===(name||'').toLowerCase());if(!entry){show('<h2>Profil tidak ditemukan</h2><button class="bt" onclick="renderLeaderboard()">Kembali</button>');return}show(`<h2>Player Profile</h2><div class="profile-hero"><div class="avatar" style="display:grid;place-items:center;font-size:27px;font-weight:900;color:var(--ac)">${escapeHTML((name||'P').slice(0,1).toUpperCase())}</div><div style="min-width:0"><div class="profile-name">${escapeHTML(name)}</div><div class="profile-title">${escapeHTML(titleForScore(Number(entry.s||0)))}</div></div></div><div class="profile-stats"><div class="profile-stat"><small>BEST SCORE IN LOCAL BOARD</small><b>${Number(entry.s||0).toLocaleString('id-ID')}</b></div><div class="profile-stat"><small>RECORDED DATE</small><b style="font-size:13px">${escapeHTML(entry.d||'—')}</b></div></div><button class="bt" onclick="renderLeaderboard()">Kembali ke leaderboard</button>`)}
 // Supabase config is entered inside the game; the publishable key is never hard-coded into this file.
 const DEFAULT_SB_URL = 'https://wsakbownwzbukhcxixyf.supabase.co';
-const DEFAULT_SB_KEY = 'TEMPEL_PUBLISHABLE_KEY_LU_DI_SINI';
+const DEFAULT_SB_KEY = 'sb_publishable_LGWwmVu4jQCHi3ZjfijvJw_-efj3O4l';
 
 let sbUrl=String(ld('bp_sb_url',DEFAULT_SB_URL)||DEFAULT_SB_URL).replace(/\/$/,'');
 let sbKey=String(ld('bp_sb_key',DEFAULT_SB_KEY)||DEFAULT_SB_KEY);
